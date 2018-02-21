@@ -44,12 +44,15 @@ export const recognizeSpeech = (recObj, options) => {
       recognition.stop()
       reject(SpeechRecognitionEvent.error)
     }
+    recognition.onend = () => {
+      reject('listening-ended')
+    }
   })
 }
 
-export const checkAnswer = (userInput, responses) => {
+export const checkAnswer = (userInput, responses, accuracy) => {
   for(let i=0; i<responses.length; i++) {
-    if((stringSimilarity.compareTwoStrings(userInput, responses[i].translation) > 0.85)) {
+    if((stringSimilarity.compareTwoStrings(userInput, responses[i].translation) > accuracy)) {
       return responses[i]
     }
   }

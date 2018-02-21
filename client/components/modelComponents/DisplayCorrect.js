@@ -7,10 +7,9 @@ const DisplayCorrect = (props) => {
       primitive='a-text'
       value={props.value}
       color='red'
-      height='15'
-      width='15'
       position={props.position}
       align='center'
+      rotation={props.rotation}
     />
   )
 }

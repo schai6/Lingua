@@ -1,34 +1,35 @@
-import React, { Component } from 'react'
+import React from 'react'
 import 'aframe'
 import { connect } from 'react-redux'
 import { Entity } from 'aframe-react'
-import { fetchPrompts, translateResponse, fetchCharacters } from '../store'
+import { fetchPrompts, fetchCharacters, getGameState } from '../store'
 
-class Loading extends Component {
-  constructor(props) {
-    super(props)
-  }
-
+class Loading extends React.Component {
   componentDidMount() {
-    //response when character does not hear an expected response.
-    const response = 'I do not understand'
-    const { setPrompts, getVendorResponse, currentLanguage, setCharacters } = this.props
+    const { setPrompts, currentLanguage, setCharacters } = this.props
     const nativeLang = currentLanguage.nativeLang
     const learningLang = currentLanguage.learningLang
     setPrompts(nativeLang, learningLang)
-    getVendorResponse(response, nativeLang, learningLang)
     setCharacters()
   }
 
+  componentDidUpdate() {
+    const finishedLoading = Object.values(this.props.loading).every(asset => asset)
+    if (finishedLoading) this.props.setGameState('game')
+  }
+
   render() {
+    const { loading } = this.props
+    const finishedLoading = Object.values(loading).every(asset => asset)
     return (
-      this.props.gameState === 'loading' ? <Entity
+      !finishedLoading &&
+      <Entity
         id="enter-scene-plane"
         primitive="a-plane"
         height="1"
         width="2"
         opacity="0"
-        position="0 0 .01"
+        position="0 2 -3.01"
         color="blue"
       >
         <Entity
@@ -41,18 +42,17 @@ class Loading extends Component {
           position="0 0 0"
         />
       </Entity>
-      : null
     )
   }
 }
 
-const mapState = ({ gameState, currentLanguage }) => ({ gameState, currentLanguage })
+const mapState = ({ currentLanguage, loading }) => ({ currentLanguage, loading })
 
 export const mapDispatch = (dispatch) => {
   return {
     setPrompts: (learningLang, nativeLang) => dispatch(fetchPrompts(learningLang, nativeLang)),
-    getVendorResponse: (response, learningLang, nativeLang) => dispatch(translateResponse(response, learningLang, nativeLang)),
-    setCharacters: () => dispatch(fetchCharacters())
+    setCharacters: () => dispatch(fetchCharacters()),
+    setGameState: gameState => dispatch(getGameState(gameState))
   }
 }
 

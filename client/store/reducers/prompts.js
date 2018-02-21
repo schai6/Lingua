@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { deAccent } from '../../utils/accentRemover'
+import { getLoading } from './loading'
 //ACTION TYPES
 const GET_PROMPTS = 'GET_PROMPTS'
 
@@ -17,6 +17,7 @@ export const fetchPrompts = (fromLang, toLang) => {
     .then(prompts => prompts.data)
     .then(prompts => translatePrompts(prompts, fromLang, toLang))
     .then(prompts => dispatch(getPrompts(prompts)))
+    .then(() => dispatch(getLoading({prompts: true})))
     .catch(err => console.log(err))
   }
 }
