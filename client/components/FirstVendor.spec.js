@@ -16,13 +16,7 @@ describe("FirstVendor", () => {
   let store
   beforeEach(() => {
     props = {
-<<<<<<< HEAD
-      currentQuest: undefined,
-      currentCharacter: undefined,
-      currentPrompt: undefined,
-=======
       currentPrompt: {responses: []},
->>>>>>> 23f3c7f8768d75bf22190f3b996f028fd91bfea6
       vendorResponse: [],
       currentQuest: undefined,
       currentCharacter: 0,
