@@ -57,12 +57,8 @@ describe("FirstVendor", () => {
     beforeEach(() => {
       mockState = () => {
         return {
-<<<<<<< HEAD
-          currentPrompt: 'test',
-=======
           prompts: true,
           currentPrompt: {responses: []},
->>>>>>> 23f3c7f8768d75bf22190f3b996f028fd91bfea6
           vendorResponse: '',
           language: {
             nativeLang: 'en',
