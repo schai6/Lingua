@@ -12,7 +12,7 @@ export const mapState = (storeState, ownProps) => {
   const responseAdjustPosition = { x: 0, y: 2, z: -1 }
   const listeningAdjustPosition = { x: .5, y: 1, z: 0}
   const matchCharacter = storeState.currentCharacter === ownProps.characterId
-  const displayPromptResponses = storeState.currentPrompt && matchCharacter
+  const displayPromptResponses = Object.keys(storeState.currentPrompt).length && matchCharacter
   return {
     currentPrompt: storeState.currentPrompt,
     vendorResponse: storeState.vendorResponse,

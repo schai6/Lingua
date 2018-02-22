@@ -3,11 +3,13 @@ import { Entity } from 'aframe-react'
 import 'aframe-animation-component'
 
 const Octo = (props) => {
-  const animation = props.matchCharacter &&
+  console.log(props.matchCharacter)
+  const animation = props.matchCharacter ?
   `property: position;
     dir: alternate;
     loop: true;
-    to: 0 0.1 0;`
+    to: 0 0.1 0;` : {}
+  console.log(animation)
   return (
     <Entity>
       <Entity
