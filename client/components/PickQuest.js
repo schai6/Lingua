@@ -7,7 +7,8 @@ export class PickQuest extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      selectedQuestId: -1
+      //default to first quest
+      selectedQuest: 1
     }
   }
 
