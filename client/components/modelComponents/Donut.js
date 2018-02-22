@@ -8,7 +8,7 @@ const Donut = (props) => {
   `property: position;
     dir: alternate;
     loop: true;
-    to: 0 0.1 0;` : null
+    to: 0 0.05 0;` : null
   return (
     <Entity>
       <Entity
