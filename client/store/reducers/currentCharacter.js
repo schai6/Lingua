@@ -11,7 +11,6 @@ export const setCharacter = character => {
 
 //REDUCER
 export default function(state = 0, action) {
-  console.log('settingcharacterto', action.character)
   switch(action.type) {
     case SET_CHARACTER:
       return action.character
