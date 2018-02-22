@@ -37,14 +37,12 @@ function handleCorrect(result, currentQuest) {
   if (success) this.setState({ success })
   let nextPrompt = findNextPrompt.call(this, result.prompt_responses.nextPromptId) || null
   //start conversation with the nextPrompt
-  console.log(nextPrompt)
   if (nextPrompt) {
     resetState.call(this, 'Listening!', result.text)
     this.props.setCurrentPrompt(nextPrompt)
     this.converse()
   //if the nextPrompt is null, then the conversation is over.
   } else {
-    console.log('hihihi')
     giveReward.call(this)
     resetState.call(this, '')
     this.props.setCurrentPrompt({})
