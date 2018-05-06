@@ -23,5 +23,17 @@ Lingua is a language learning app built to address the shortcomings of the tradi
 Either follow the "Information for Developers" steps above to run locally, or simply head to [our heroku app](https://lingua-learn.herokuapp.com "Lingua").
 
 ### How to Play:
-The center circle is your cursor. Click and drag the screen to position your cursor and then click again to select. First click to sign in. Then select your desired language and click "Select" to move on to the choose quest screen. Select your quest. Once loading finishes, use the WASD keys or the arrow keys to move around. Click on a character to begin your conversation. Note, you may be prompted to enable your microphone. Given the prompt, speak one of the possible answer choices when the blue "Listening!" text is displayed. If pronounced correctly, the character will display its next prompt. If pronounced incorrectly, red text saying "I do not understand" will appear. If sound is not detected, then the "Listening!" text will disappear and you will have to click on the vendor again. After your second incorrect response, a hint will be displayed. After 5 incorrect responses, then the accuracy threshold will be reduced to allow you to progress through the conversation. Have fun, and don't miss the donut guy on the left!
+The center circle is your cursor. Click and drag the screen to position your cursor and then click again to select.
 
+- Click to sign in.
+- Click to select your desired language and then click "Select" to move on to the choose quest screen.
+- Select your quest and click "Select" to continue.
+- Once loading finishes, use the WASD keys or the arrow keys to move around.
+- Click on a character to begin your conversation. Note, you may be prompted to enable your microphone.
+- Given the prompt, speak one of the possible answer choices when the blue "Listening!" text is displayed.
+  - If pronounced correctly, the character will display its next prompt.
+  - If pronounced incorrectly, red text saying "I do not understand" will appear.
+  - If sound is not detected, then the "Listening!" text will disappear and you will have to click on the vendor again.
+  - After your second incorrect response, a hint will be displayed.
+  - After 5 incorrect responses, then the accuracy threshold will be reduced to allow you to progress through the conversation.
+- Have fun, and don't miss the donut guy on your left!
