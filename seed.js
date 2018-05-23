@@ -268,7 +268,7 @@ const languages = [
   {name: `French`, code: `fr-FR`, google: `fr`},
   {name: `German`, code: `de-DE`, google: `de`},
   {name: `Italian`, code: `it-IT`, google: `it`},
-  {name: `Portuguese`, code: `pt-BR`, google: `pt`}
+  {name: `English`, code: `en`, google: `en`}
 ]
 
 function addPrompts(prompts) {
